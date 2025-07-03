@@ -10,5 +10,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StepLoading: typeof import('./src/components/loading/StepLoading.vue')['default']
   }
 }
