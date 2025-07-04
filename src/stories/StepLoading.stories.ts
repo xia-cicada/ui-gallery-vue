@@ -8,6 +8,14 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {},
+  parameters: {
+    backgrounds: {
+      options: {
+        dark: { name: 'Dark', value: '#202020' },
+        light: { name: 'Light', value: '#ffffff' },
+      },
+    },
+  },
 } satisfies Meta<typeof StepLoading>
 
 export default meta
@@ -17,6 +25,9 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   parameters: {
     layout: 'centered',
+  },
+  globals: {
+    backgrounds: { value: 'dark' },
   },
   args: {},
 }
