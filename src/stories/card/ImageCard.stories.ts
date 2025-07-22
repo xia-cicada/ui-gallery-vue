@@ -5,9 +5,13 @@ import ImageCard01 from '@/components/card/ImageCard01.vue'
 const meta = {
   title: 'Card/Image Card 01',
   component: ImageCard01,
-  argTypes: {},
+  argTypes: {
+    width: { control: { type: 'range', min: 100, max: 600 } },
+  },
   tags: ['card', 'information'],
-  args: {},
+  args: {
+    width: 400,
+  },
   globals: {
     backgrounds: { value: 'light' },
   },
@@ -29,5 +33,4 @@ export const Default: Story = {
   parameters: {
     layout: 'centered',
   },
-  args: {},
 }

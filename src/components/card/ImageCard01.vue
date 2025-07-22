@@ -1,7 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    width?: number
+  }>(),
+  { width: 400 }
+)
+</script>
 
 <template>
-  <div class="rounded-[30px] p-4 w-[400px] overflow-hidden bg-white shadow-2xl">
+  <div
+    :style="{ width: `${width}px` }"
+    class="rounded-[30px] p-4 overflow-hidden bg-white shadow-3xl font-[Comfortaa]"
+  >
     <div class="rounded-[23px] relative mask-dark z-0 shadow-xl">
       <img
         src="/imgs/image.png"
@@ -9,7 +19,7 @@
         class="block w-full object-fill"
       />
       <div
-        class="absolute z-1 bottom-1rem left-1rem right-1rem text-neutral-200 flex"
+        class="absolute z-1 bottom-1rem left-1rem right-1rem text-neutral-200 flex font-[Playfair]"
       >
         <div>
           <div>OCEAN LIGHT</div>
@@ -24,26 +34,29 @@
     </div>
     <div class="mt-6 mb-2 flex gap-6">
       <div>
-        <div>BEACH</div>
+        <div class="font-bold text-#d44f44">BEACH</div>
         <div class="text-xs text-gray-500">sun of beach & light to dark</div>
-        <div class="h-1px bg-gray mt-1"></div>
-        <div class="grid grid-cols-3 gap-2 text-sm">
+        <div class="h-1px border-b-(dashed 1 gray) mt-1"></div>
+        <div class="grid flex gap-3 text-sm mt-2">
           <div>
-            <div>165KM</div>
-            <div class="text-xs text-gray-500">far away</div>
+            <div>165km</div>
+            <div class="text-xs text-gray-500">far</div>
           </div>
           <div>
-            <div>165KM</div>
-            <div class="text-xs text-gray-500">far away</div>
+            <div>16h</div>
+            <div class="text-xs text-gray-500">sleep</div>
           </div>
           <div>
-            <div>165KM</div>
-            <div class="text-xs text-gray-500">far away</div>
+            <div>¥982</div>
+            <div class="text-xs text-gray-500">poor</div>
           </div>
         </div>
       </div>
-      <div class="flex-1 self-stretch all-center rounded-xl bg-gray-200">
-        HAHAH
+      <div
+        style="container-type: inline-size"
+        class="flex-1 font-light self-stretch all-center rounded-[20px] bg-gray-200 border-b-(5 solid #d44f44) pt-2"
+      >
+        <span class="text-[25cqw] font-light">SEA</span>
       </div>
     </div>
   </div>
