@@ -5,6 +5,8 @@ const props = withDefaults(
   }>(),
   { width: 400 }
 )
+
+const showDetail = ref(true)
 </script>
 
 <template>
@@ -32,32 +34,47 @@ const props = withDefaults(
         </div>
       </div>
     </div>
-    <div class="mt-6 mb-2 flex gap-6">
-      <div>
-        <div class="font-bold text-#d44f44">BEACH</div>
-        <div class="text-xs text-gray-500">sun of beach & light to dark</div>
-        <div class="h-1px border-b-(dashed 1 gray) mt-1"></div>
-        <div class="grid flex gap-3 text-sm mt-2">
-          <div>
-            <div>165km</div>
-            <div class="text-xs text-gray-500">far</div>
-          </div>
-          <div>
-            <div>16h</div>
-            <div class="text-xs text-gray-500">sleep</div>
-          </div>
-          <div>
-            <div>¥982</div>
-            <div class="text-xs text-gray-500">poor</div>
+    <transition
+      enter-active-class="animate__animated animate__flipInX"
+      leave-active-class="animate__animated animate__flipOutX"
+    >
+      <div class="mt-6 mb-2 flex gap-6" v-if="showDetail">
+        <div>
+          <div class="font-bold text-#d44f44">BEACH</div>
+          <div class="text-xs text-gray-500">sun of beach & light to dark</div>
+          <div class="h-1px border-b-(dashed 1 gray) mt-1"></div>
+          <div class="grid flex gap-3 text-sm mt-2">
+            <div>
+              <div>165km</div>
+              <div class="text-xs text-gray-500">far</div>
+            </div>
+            <div>
+              <div>16h</div>
+              <div class="text-xs text-gray-500">sleep</div>
+            </div>
+            <div>
+              <div>¥982</div>
+              <div class="text-xs text-gray-500">poor</div>
+            </div>
           </div>
         </div>
+        <div
+          style="container-type: inline-size"
+          class="flex-1 font-light self-stretch all-center rounded-[20px] bg-gray-200 border-b-(5 solid #d44f44) pt-2"
+        >
+          <span class="text-[25cqw] font-light">SEA</span>
+        </div>
       </div>
-      <div
-        style="container-type: inline-size"
-        class="flex-1 font-light self-stretch all-center rounded-[20px] bg-gray-200 border-b-(5 solid #d44f44) pt-2"
-      >
-        <span class="text-[25cqw] font-light">SEA</span>
-      </div>
+    </transition>
+    <div class="text-center mt-5 text-xl transition-all hover:scale-150">
+      <span
+        :class="
+          showDetail
+            ? 'i-tabler-chevron-compact-up'
+            : 'i-tabler-chevron-compact-down'
+        "
+        @click="showDetail = !showDetail"
+      ></span>
     </div>
   </div>
 </template>

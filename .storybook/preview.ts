@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/vue3-vite'
 import 'virtual:uno.css'
 import '../src/assets/main.scss'
+import 'animate.css'
 
 const preview: Preview = {
   parameters: {
