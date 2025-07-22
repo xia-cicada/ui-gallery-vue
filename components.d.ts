@@ -8,8 +8,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    copy: typeof import('./src/components/card/ImageCard01 copy.vue')['default']
     ImageCard: typeof import('./src/components/card/ImageCard01.vue')['default']
     ImageCard01: typeof import('./src/components/card/ImageCard01.vue')['default']
+    ImageCard02: typeof import('./src/components/card/ImageCard02.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StepLoading: typeof import('./src/components/loading/StepLoading.vue')['default']
